@@ -44,6 +44,7 @@
 			children = (
 				73F38AE11F018658000FDA03 /* HelpMe */,
 				73F38AE01F018658000FDA03 /* Products */,
+				73F38AEB1F018658000FDA03 /* Main.storyboard */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,7 +63,6 @@
 				73F38AE61F018658000FDA03 /* AppDelegate.m */,
 				73F38AE81F018658000FDA03 /* ViewController.h */,
 				73F38AE91F018658000FDA03 /* ViewController.m */,
-				73F38AEB1F018658000FDA03 /* Main.storyboard */,
 				73F38AEE1F018658000FDA03 /* Assets.xcassets */,
 				73F38AF01F018658000FDA03 /* LaunchScreen.storyboard */,
 				73F38AF31F018658000FDA03 /* Info.plist */,
@@ -165,6 +165,7 @@
 				73F38AEC1F018658000FDA03 /* Base */,
 			);
 			name = Main.storyboard;
+			path = HelpMe;
 			sourceTree = "<group>";
 		};
 		73F38AF01F018658000FDA03 /* LaunchScreen.storyboard */ = {
