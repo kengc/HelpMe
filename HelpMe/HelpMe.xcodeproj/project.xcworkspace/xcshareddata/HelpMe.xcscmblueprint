@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5620ED2F2D0FB12A71162C3204E516283C4E0C08",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5620ED2F2D0FB12A71162C3204E516283C4E0C08" : 9223372036854775807,
+    "F07CC548DD3E34007463AC61D26DEA428C80D33C" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "85A4F787-AFBC-458D-A074-3F60FE0CE9AC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5620ED2F2D0FB12A71162C3204E516283C4E0C08" : "HelpMe\/",
+    "F07CC548DD3E34007463AC61D26DEA428C80D33C" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "HelpMe",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "HelpMe\/HelpMe.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kengc\/HelpMe.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5620ED2F2D0FB12A71162C3204E516283C4E0C08"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/katrinadeguzman\/TipCalculator.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F07CC548DD3E34007463AC61D26DEA428C80D33C"
+    }
+  ]
+}

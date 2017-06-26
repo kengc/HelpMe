@@ -31,6 +31,8 @@
     //sender.view.backgroundColor = color;
 
     NSLog(@"I GOT TAPPED HELP!");
+    [self performSegueWithIdentifier:@"openMap" sender:self];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,5 +40,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"openMap"])
+    {
+    
+    }
+}
 
 @end
