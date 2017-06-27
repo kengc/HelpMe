@@ -15,7 +15,8 @@
 
 @interface ViewController ()
 
-@property (strong, nonatomic) FIRDatabaseReference *FirDBref;
+@property (strong, nonatomic) FIRDatabaseReference *FirDBRef;
+@property (strong, nonatomic) NSDictionary *retrievedData;
 
 @end
 
@@ -25,9 +26,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.FirDBref = [[FIRDatabase database] reference];
+    self.FirDBRef = [[FIRDatabase database] reference];
     
-    HelpUserModel *helpObject = [[HelpUserModel alloc] initWithFirstname:@"Fred" lastname:@"McGriff" age:34 latcoordinate:34.1223 lonCoordinate:-122.1122 phonenumber:1231231234 address:@"something something street" isresponder:YES doesneedhelp:NO];
+    HelpUserModel *helpObject = [[HelpUserModel alloc] initWithFirstname:@"Fred" lastname:@"McGriff" age:34 latcoordinate:49.281916 lonCoordinate:-123.108317 phonenumber:1231231234 address:@"something something street" isresponder:YES doesneedhelp:NO];
     
     
    // NSString *key = [[self.FirDBref child:@"posts"] childByAutoId].key;
@@ -41,9 +42,49 @@
     NSDictionary *userDict = @{ @"username" : userName, @"lat" : @(helpObject.latCoordinate), @"lon": @(helpObject.lonCoordinate),
                                 @"phone": @(helpObject.phoneNumber), @"address": helpObject.address, @"isresponder": @(helpObject.isResponder), @"needhelp": @(helpObject.doesNeedHelp)};
     
+    //Save user data - this works!
+    //[[[self.FirDBref child:@"users"] childByAutoId] setValue:userDict];
+
+
+//    self.FirDBref = [_postRef observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+//        NSDictionary *postDict = snapshot.value;
+//        // ...
+//    }];
+//    
+//    [[[_ref child:@"users"] child:user.uid]
+//     setValue:@{@"username": username}];
     
-    [[[self.FirDBref child:@"users"] childByAutoId] setValue:userDict];
-    
+    [[self.FirDBRef child:@"users"]observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        
+       self.retrievedData = snapshot.value;
+        
+        NSEnumerator *enumerator = [snapshot children];
+        FIRDataSnapshot *child;
+        while (child = [enumerator nextObject]) {
+            
+            //checking needhelp flag, but need to convert it to long and then check. lame
+            
+            NSString *needhelp = child.value[@"needhelp"];
+            NSLog(@"bool: %@", needhelp);
+            
+            long help = [needhelp integerValue];
+            
+            if (help == 1){
+                NSString *lat = child.value[@"lat"];
+                NSString *lon = child.value[@"lon"];
+                NSLog(@"lat: %@", lat);
+                NSLog(@"lon: %@", lon);
+            }
+        }
+        
+        //NSLog(@"%@",self.retrievedData);
+        
+        
+        // [usersDict objectForKey:_user.uid];
+        
+       // [self configure:[userDict objectForKey:@"Name"]];
+
+    }];
     
     
     //fetch all the users and iterate thru them
