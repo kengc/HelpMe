@@ -7,4 +7,5 @@ target 'HelpMe' do
 
   # Pods for HelpMe
  pod 'Firebase'
+ pod 'Firebase/Database'
 end
