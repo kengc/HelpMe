@@ -2,36 +2,61 @@
 //  MapViewController.m
 //  HelpMe
 //
-//  Created by Katrina de Guzman on 2017-06-26.
+//  Created by Katrina de Guzman on 2017-06-27.
 //  Copyright © 2017 Kevin Cleathero. All rights reserved.
 //
 
+
 #import "MapViewController.h"
 
-@interface MapViewController ()
+@import Firebase;
+#import <FirebaseDatabase/FirebaseDatabase.h>
 
+@interface MapViewController ()
+@property FIRDatabaseReference *ref;
 @end
 
 @implementation MapViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.ref=[[FIRDatabase database]reference];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self getData];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) getData
+{
+    //    [[self.ref child:@"users"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot)
+    //     {
+    //         NSDictionary *dict = snapshot.value;
+    //         NSLog(@"%@",dict);
+    //
+    MKPointAnnotation *point1 = [[MKPointAnnotation alloc] init];
+    //49.281916, -123.108317
+    
+    NSString* latString =  [NSString stringWithFormat:@"49.281916"];
+    NSString* longString = [NSString stringWithFormat:@"-123.108317"];
+    //         NSString* latString =  [NSString stringWithFormat:@"%@", [dict valueForKey:@"lat"]];
+    //         NSString* longString = [NSString stringWithFormat:@"%@", [dict valueForKey:@"long"]];
+    CLLocationDegrees latitude = [latString doubleValue];
+    CLLocationDegrees longitude = [longString doubleValue];
+    
+    point1.coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+    
+    int regionRadius = 10000;
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(point1.coordinate, regionRadius*2, regionRadius*2);
+    [self.mapView setRegion:region];
+    
+    self.mapView.delegate = self;
+    
+    [self.mapView addAnnotation:point1];
+    //     }];
 }
-*/
 
 @end
+

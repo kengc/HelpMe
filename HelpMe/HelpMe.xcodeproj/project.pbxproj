@@ -16,6 +16,7 @@
 		73F38AFC1F01B623000FDA03 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73F38AFB1F01B623000FDA03 /* GoogleService-Info.plist */; };
 		73F38AFF1F01D50D000FDA03 /* HelpUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F38AFE1F01D50D000FDA03 /* HelpUserModel.swift */; };
 		77DD47E4ED77D01431740D68 /* Pods_HelpMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA856DA0322A6B261ADCD24 /* Pods_HelpMe.framework */; };
+		D7699DE81F032D030027230E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7699DE71F032D030027230E /* MapViewController.m */; };
 		D7AB0D861F018A80007A932D /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7AB0D851F018A80007A932D /* Map.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,8 @@
 		A3DF83675082E160DCF4D814 /* Pods-HelpMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelpMe/Pods-HelpMe.release.xcconfig"; sourceTree = "<group>"; };
 		A76CFB0D6D98E97C242D270F /* Pods-HelpMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelpMe/Pods-HelpMe.debug.xcconfig"; sourceTree = "<group>"; };
 		BCA856DA0322A6B261ADCD24 /* Pods_HelpMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelpMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7699DE61F032D030027230E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		D7699DE71F032D030027230E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		D7AB0D851F018A80007A932D /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +82,8 @@
 				73F38AE61F018658000FDA03 /* AppDelegate.m */,
 				73F38AFE1F01D50D000FDA03 /* HelpUserModel.swift */,
 				73F38AE81F018658000FDA03 /* ViewController.h */,
+				D7699DE61F032D030027230E /* MapViewController.h */,
+				D7699DE71F032D030027230E /* MapViewController.m */,
 				73F38AE91F018658000FDA03 /* ViewController.m */,
 				73F38AEE1F018658000FDA03 /* Assets.xcassets */,
 				73F38AF01F018658000FDA03 /* LaunchScreen.storyboard */,
@@ -241,6 +246,7 @@
 			files = (
 				73F38AEA1F018658000FDA03 /* ViewController.m in Sources */,
 				73F38AFF1F01D50D000FDA03 /* HelpUserModel.swift in Sources */,
+				D7699DE81F032D030027230E /* MapViewController.m in Sources */,
 				73F38AE71F018658000FDA03 /* AppDelegate.m in Sources */,
 				73F38AE41F018658000FDA03 /* main.m in Sources */,
 			);
